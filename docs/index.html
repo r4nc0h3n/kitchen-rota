@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#F2EDE1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#151210" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EDF1EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1410" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Rota">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232D2D2D'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23E6CD96' stroke-width='3'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADZElEQVR42u3dwW0bQRBE0U6I6TIrp+E0bOjug0FQ1Mzvt0DduVUPQ1JaQTOHXo/H44+cm3EBCzzAAjjIAjbIAjbIkoVtHMnANogkUBtBMrAVLxnUCpcMakVLBrWCJYNasZJBrVDJoFakpFArUTKgFSgZ1IqTFGqlSQa0wiSFWlmSAa0oSaFWkmRAK0hSqJUjGdCKkRRqpQjQIkCLfDNohUgKtTIEaBGg2/n96/ly9Af0lXBBB3odYriBziKGG+gsYrj/A7Qi7oUM9j9Qg/zMBWiQwQYaZLCBhhlqoEEGG+gfwlx9jUAvwOy1A301ZPcEdGJ49wd0Ymz3CnRiYPcNdGJUHTyBLgzpY1enjzGen/KUepmto/kNabOjlaA9vwK0kaAG2jh6A9oo+gMaZh1eBhpmXWZAw6zT9aCh3dnrKB3qUr9AAw20sqEG+gNFw6nrcWpIqe9xYkip83FaSKn3cVJIqXugBWiFQn3qBkAL0KeUCZ8djgbtdLbFWtDQ2QNoAdpbHNA3bQK0AO3tDWqggQYaaKDtArQA7cuHNLYZp4CU9gFagAYaaKCBBhpooO0DtACtMAEaaKCBBhpooIG2D9ACtMIEaKCBBtrTdp628zw00HYBWoBWnAANNNBA+2LoCyHQQNvkfNA+dvi4AbTYowIaalscD9opbYfVoKG2AdACtEJh9n8KgQYa6NdKhVrvR4N2Sut8PWio9X00aKe0rteDhlrPo2yYS/0CDTTQSocZ6A8XD/XOTscAMJe6HEPAXOpwBWio9/Q3RoG51NsYB+ZSX2MkmEs9rQS9BfXGjmbzYFXYm3sZ4z1hDvUxRmwMqYMQ6HcOetuoW+87D/rd454+8KZ7XQv6O4Y+bez6/QH9odF/evjiPQF9CIJPYLj5tQN9MYx3QLnhNQK9GPXJqW+9AjTYe55fWQV6K+pN+64DvQn2xl3Xgi7D3rznfF3+POkBcgUz0PfDthvQ1+O2D9DX47YD0Nfj1jfQ/iAVaGUI0CJngoZaUpiBFqBFgBb5EGioJYUZaMmBhlpSmIGWHGioJYUZaMmBhlpSmIGWHGioJYUZaslhBlpyoKGWFGaoJYcZaslhhlpymKGWHGaoJYcZaslhBltykKGWJGawJQcZbElCBluSkMGWJGTAAXYBD+yL11+RGEm4c+YP0AAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E4A32'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23E8D09B' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADaElEQVR42u3dwW0bQRBE0Y7AwSgMp8ikHIazkOG7DwZBUTO/3wJ151Y9DElpBc0cev34+fEp52ZcwAIPsAAOsoANsoANsmRhG0cysA0iCdRGkAxsxUsGtcIlg1rRkkGtYMmgVqxkUCtUMqgVKSnUSpQMaAVKBrXiJIVaaZIBrTBJoVaWZEArSlKolSQZ0AqSFGrlSAa0YiSFWikCtAjQIl8MWiGSQq0MAVoE6HZ+/3o8Hf0BfSVc0IFehxhuoLOI4QY6ixju/wCtiHshg/0P1CA/cgEaZLCBBhlsoGGGGmiQwQb6mzBXXyPQCzB77UBfDdk9AZ0Y3v0BnRjbvQKdGNh9A50YVQcPoAtD+tjV6WOM56c8pV5m62h+Q9rsaCVoz68AbSSogTaO3oA2iv6AhlmHl4GGWZcZ0DDrdD1oaHf2OkqHutQv0EADrWyogX5D0XDqepwaUup7nBhS6nycFlLqfZwUUuoeaAFaoVCfugHQAvQpZcJnh6NBO51tsRY0dPYAWoD2Fgf0TZsALUB7e4MaaKCBBhpouwAtQPvyIY1txikgpX2AFqCBBhpooIEGGmj7AC1AK0yABhpooIEGGmig7QO0AK0wARpooIH2tJ2n7TwPDbRdgBagFSdAAw000L4Y+kIINNA2OR+0jx0+bgAt9qiAhtoWx4N2StthNWiobQC0AK1QmP2fQqCBBvq5UqHW+9GgndI6Xw8aan0fDdoprev1oKHW8ygb5lK/QAMNtNJhBvrNxUO9s9MxAMylLscQMJc6XAEa6j39jVFgLvU2xoG51NcYCeZSTytBb0G9saPZPFgV9uZexngPmEN9jBEbQ+ogBPqVg9426tb7zoN+9binD7zpXteC/oqhTxu7fn9Av2n07x6+eE9AH4LgHRhufu1AXwzjFVBueI1AL0Z9cupbrwAN9p7nV1aB3op6077rQG+CvXHXtaDLsDfvOX8vf570AXIFM9D3w7Yb0Nfjtg/Q1+O2A9DX49Y30P4gFWhlCNAiZ4KGWlKYgRagRYAWeRNoqCWFGWjJgYZaUpiBlhxoqCWFGWjJgYZaUpiBlhxoqCWFGWrJYQZacqChlhRmqCWHGWrJYYZacpihlhxmqCWHGWrJYQZbcpChliRmsCUHGWxJQgZbkpDBliRkwAF2AQ/sk9cf3LIX6oNPD94AAAAASUVORK5CYII=">
 <style>
 :root{
   color-scheme: light dark;
@@ -28,14 +28,14 @@ img{ max-width:100% }
 
 <style>
 :root{
-  --bg:#F2EDE1; --panel:#FFFDF8; --panel-2:#F7F2E6; --panel-3:#EBE3D1;
-  --line:#E0D6C4; --line-2:#C0A58A;
-  --ink:#1A1407; --ink-2:#5A4F3C; --ink-3:#8A7C63;
-  --accent:#2D2D2D; --gold:#B08A2E; --warn:#B4551F; --warn-bg:#F9E6D6;
-  --chip-ink:#FFFDF8;
+  --bg:#EDF1EA; --panel:#FFFFFF; --panel-2:#F4F7F1; --panel-3:#E2EADD;
+  --line:#D2DECB; --line-2:#AFC0A6;
+  --ink:#0F1C16; --ink-2:#41544A; --ink-3:#6F8277;
+  --accent:#0E4A32; --gold:#B8912F; --warn:#B4551F; --warn-bg:#F8E7D8;
+  --chip-ink:#FFFFFF;
   --wa:#1FA855; --ms:#0A7CFF;
-  --w0:#C0491B; --w1:#166E6B; --w2:#4F6B12; --w3:#8E2F55; --w4:#8A6414;
-  --shadow:0 1px 2px rgba(26,20,7,.05), 0 10px 24px -18px rgba(26,20,7,.45);
+  --w0:#C0491B; --w1:#15646F; --w2:#5B7A14; --w3:#8E2F55; --w4:#8A6414;
+  --shadow:0 1px 2px rgba(15,28,22,.05), 0 10px 24px -18px rgba(15,28,22,.45);
   --brand:"Montserrat","IBM Plex Sans",system-ui,sans-serif;
   --sans:"IBM Plex Sans","Noto Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
   --thai:"Noto Sans Thai","IBM Plex Sans",system-ui,sans-serif;
@@ -43,24 +43,24 @@ img{ max-width:100% }
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#151210; --panel:#201A15; --panel-2:#272019; --panel-3:#312820;
-    --line:#382E25; --line-2:#4E4234;
-    --ink:#F2EDE1; --ink-2:#BCAE99; --ink-3:#8D806D;
-    --accent:#E6CD96; --gold:#E6CD96; --warn:#E89058; --warn-bg:#33231A;
-    --chip-ink:#1A1407;
+    --bg:#0B1410; --panel:#122019; --panel-2:#18281F; --panel-3:#1F3428;
+    --line:#26382D; --line-2:#3A5042;
+    --ink:#E9F1EA; --ink-2:#A8BCAF; --ink-3:#7B9184;
+    --accent:#E8D09B; --gold:#E8D09B; --warn:#EE9463; --warn-bg:#2E2117;
+    --chip-ink:#0B1410;
     --wa:#3DD07E; --ms:#4DA3FF;
-    --w0:#F08A5C; --w1:#5BBDB6; --w2:#AFCB5E; --w3:#EE7FA8; --w4:#DCB65A;
+    --w0:#F08A5C; --w1:#5FB9C6; --w2:#B5CE63; --w3:#EE7FA8; --w4:#DCB65A;
     --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 24px -18px rgba(0,0,0,.9);
   }
 }
 :root[data-theme="dark"]{
-  --bg:#151210; --panel:#201A15; --panel-2:#272019; --panel-3:#312820;
-  --line:#382E25; --line-2:#4E4234;
-  --ink:#F2EDE1; --ink-2:#BCAE99; --ink-3:#8D806D;
-  --accent:#E6CD96; --gold:#E6CD96; --warn:#E89058; --warn-bg:#33231A;
-  --chip-ink:#1A1407;
+  --bg:#0B1410; --panel:#122019; --panel-2:#18281F; --panel-3:#1F3428;
+  --line:#26382D; --line-2:#3A5042;
+  --ink:#E9F1EA; --ink-2:#A8BCAF; --ink-3:#7B9184;
+  --accent:#E8D09B; --gold:#E8D09B; --warn:#EE9463; --warn-bg:#2E2117;
+  --chip-ink:#0B1410;
   --wa:#3DD07E; --ms:#4DA3FF;
-  --w0:#F08A5C; --w1:#5BBDB6; --w2:#AFCB5E; --w3:#EE7FA8; --w4:#DCB65A;
+  --w0:#F08A5C; --w1:#5FB9C6; --w2:#B5CE63; --w3:#EE7FA8; --w4:#DCB65A;
   --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 24px -18px rgba(0,0,0,.9);
 }
 
@@ -78,7 +78,7 @@ a{text-decoration:none}
 /* ---------- sticky header ---------- */
 .topbar{
   position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
-  background:var(--bg); border-bottom:1px solid var(--line);
+  background:var(--bg); border-bottom:2px solid var(--gold);
 }
 .topbar .inner{
   max-width:1360px; margin:0 auto; padding:10px 16px 11px;
@@ -91,7 +91,7 @@ a{text-decoration:none}
 }
 .title .mark{
   width:22px; height:22px; border-radius:6px; background:var(--gold);
-  color:#1A1407; display:grid; place-items:center; font-size:12px; flex:none;
+  color:var(--accent); display:grid; place-items:center; font-size:12px; flex:none;
 }
 
 .nav{display:flex; align-items:center; gap:8px; width:100%; order:3}
@@ -169,7 +169,8 @@ a{text-decoration:none}
 }
 .day[data-today="1"] .day-head{background:var(--accent); border-bottom-color:var(--accent)}
 .day[data-today="1"] .dow,.day[data-today="1"] .dt,.day[data-today="1"] .th{color:var(--chip-ink)}
-.day[data-today="1"] .th,.day[data-today="1"] .dt{opacity:.78}
+.day[data-today="1"] .th{opacity:.8}
+.day[data-today="1"] .dt{color:var(--gold); opacity:1}
 
 .satnote{
   padding:9px 14px; background:var(--panel-2); border-bottom:1px solid var(--line);
@@ -193,9 +194,18 @@ a{text-decoration:none}
   font-family:var(--mono); font-size:15px; font-weight:600; width:100%; max-width:200px;
   background:var(--panel); border:1px solid var(--line-2); border-radius:7px; padding:3px 7px;
 }
-.openlbl{font-size:13px; font-weight:700; color:var(--warn); letter-spacing:.04em; text-transform:uppercase}
+.editlbl{
+  margin-right:auto; display:inline-flex; align-items:center; gap:3px;
+  font-family:var(--thai); font-size:12.5px; font-weight:600; color:var(--ink-3);
+  background:var(--panel-3); border-radius:6px; padding:2px 7px; cursor:text;
+}
+.editlbl span{font-family:var(--sans); font-size:11px; letter-spacing:.03em; text-transform:uppercase; opacity:.8}
+.openlbl{
+  font-family:var(--thai); font-size:12.5px; font-weight:700; color:var(--warn);
+  background:var(--panel); border:1px solid currentColor; border-radius:6px; padding:1px 8px;
+}
 .kill{
-  margin-left:auto; background:none; border:0; cursor:pointer; color:var(--ink-3);
+  background:none; border:0; cursor:pointer; color:var(--ink-3);
   font-size:20px; line-height:1; padding:2px 6px; border-radius:6px;
 }
 .kill:active{background:var(--panel-3)}
@@ -376,10 +386,10 @@ a{text-decoration:none}
     <ol>
       <li>&#3649;&#3605;&#3632;&#3594;&#3639;&#3656;&#3629;&#3614;&#3656;&#3629;&#3588;&#3619;&#3633;&#3623;&#3648;&#3614;&#3639;&#3656;&#3629;&#3651;&#3626;&#3656;&#3648;&#3586;&#3657;&#3634;&#3585;&#3632; &#3649;&#3605;&#3632;&#3595;&#3657;&#3635;&#3629;&#3637;&#3585;&#3588;&#3619;&#3633;&#3657;&#3591;&#3648;&#3614;&#3639;&#3656;&#3629;&#3648;&#3629;&#3634;&#3629;&#3629;&#3585;
         <em>Tap a cook to put them on a shift, tap again to take them off.</em></li>
-      <li>&#3649;&#3605;&#3632;&#3607;&#3637;&#3656;&#3648;&#3623;&#3621;&#3634;&#3648;&#3614;&#3639;&#3656;&#3629;&#3649;&#3585;&#3657;&#3652;&#3586; &#3648;&#3623;&#3621;&#3634;&#3586;&#3629;&#3591;&#3623;&#3633;&#3609;&#3629;&#3634;&#3607;&#3636;&#3605;&#3618;&#3660;&#3606;&#3638;&#3591;&#3623;&#3633;&#3609;&#3614;&#3620;&#3627;&#3633;&#3626;&#3610;&#3604;&#3637;&#3592;&#3632;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3614;&#3619;&#3657;&#3629;&#3617;&#3585;&#3633;&#3609;&#3607;&#3633;&#3657;&#3591;&#3627;&#3657;&#3634;&#3623;&#3633;&#3609; &#3626;&#3656;&#3623;&#3609;&#3623;&#3633;&#3609;&#3624;&#3640;&#3585;&#3619;&#3660;&#3649;&#3621;&#3632;&#3623;&#3633;&#3609;&#3648;&#3626;&#3634;&#3619;&#3660;&#3617;&#3637;&#3648;&#3623;&#3621;&#3634;&#3586;&#3629;&#3591;&#3605;&#3633;&#3623;&#3648;&#3629;&#3591;
-        <em>Tap a time to change it. Sunday&ndash;Thursday change together; Friday and Saturday keep their own hours.</em></li>
-      <li>&#3585;&#3632;&#3607;&#3637;&#3656;&#3618;&#3633;&#3591;&#3652;&#3617;&#3656;&#3617;&#3637;&#3588;&#3609;&#3592;&#3632;&#3648;&#3611;&#3655;&#3609;&#3626;&#3637;&#3626;&#3657;&#3617;&#3649;&#3621;&#3632;&#3617;&#3637;&#3588;&#3635;&#3623;&#3656;&#3634; &laquo;open&raquo; &#3610;&#3609;&#3626;&#3640;&#3604;&#3592;&#3632;&#3610;&#3629;&#3585;&#3623;&#3656;&#3634;&#3648;&#3627;&#3621;&#3639;&#3629;&#3585;&#3637;&#3656;&#3585;&#3632;&#3607;&#3637;&#3656;&#3618;&#3633;&#3591;&#3623;&#3656;&#3634;&#3591;
-        <em>Shifts with nobody on them turn orange and say &ldquo;open&rdquo;; the top strip counts how many are still empty.</em></li>
+      <li>แตะที่เวลาหรือที่คำว่า «แก้ไข» เพื่อเปลี่ยนเวลา เวลาของวันอาทิตย์ถึงวันพฤหัสบดีจะเปลี่ยนพร้อมกันทั้งห้าวัน ส่วนวันศุกร์และวันเสาร์มีเวลาของตัวเอง
+        <em>Tap the time or the «แก้ไข / edit» label to change it. Sunday–Thursday change together; Friday and Saturday keep their own hours.</em></li>
+      <li>กะที่ยังไม่มีคนจะเป็นสีส้มและขึ้นคำว่า «ยังไม่มีคน» ด้านบนจะบอกว่าเหลือกี่กะ
+        <em>Shifts with nobody on them turn orange and say «ยังไม่มีคน»; the top strip counts how many are left.</em></li>
       <li>&#3611;&#3640;&#3656;&#3617; Summer / Winter &#3588;&#3639;&#3629;&#3648;&#3623;&#3621;&#3634;&#3620;&#3604;&#3641;&#3619;&#3657;&#3629;&#3609;&#3649;&#3621;&#3632;&#3620;&#3604;&#3641;&#3627;&#3609;&#3634;&#3623; &#3651;&#3594;&#3657;&#3585;&#3633;&#3610;&#3623;&#3633;&#3609;&#3624;&#3640;&#3585;&#3619;&#3660;&#3649;&#3621;&#3632;&#3623;&#3633;&#3609;&#3648;&#3626;&#3634;&#3619;&#3660; &#3619;&#3632;&#3610;&#3610;&#3648;&#3621;&#3639;&#3629;&#3585;&#3651;&#3627;&#3657;&#3629;&#3633;&#3605;&#3650;&#3609;&#3617;&#3633;&#3605;&#3636;&#3605;&#3634;&#3617;&#3585;&#3634;&#3619;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3648;&#3623;&#3621;&#3634;&#3586;&#3629;&#3591;&#3629;&#3636;&#3626;&#3619;&#3634;&#3648;&#3629;&#3621;
         <em>Summer / Winter sets the Friday &amp; Saturday hours. It follows the Israeli clock change automatically.</em></li>
       <li>เวลาวันเสาร์ตั้งให้อัตโนมัติตามเวลาหมดวันสะบาโตที่ไฮฟา จึงเปลี่ยนทุกสัปดาห์ ถ้าต้องการแก้ แตะที่เวลาได้เลย
@@ -422,6 +432,11 @@ const DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const DOW_FULL = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const DOW_TH = ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์'];
 const KEY = 'kitchen-rota-v2';
+const EDIT_TH = 'แก้ไข';
+const NO_ONE_TH = 'ยังไม่มีคน';
+const ADD_SHIFT_TH = 'เพิ่มกะ';
+const KA_TH = 'กะ';
+const ALL_COVERED_TH = 'ครบทุกกะ';
 const DASH = '–';
 
 const DEF = {
@@ -436,7 +451,7 @@ const DEF = {
 const HAIFA = { lat:32.7940, lng:34.9896 };
 const TZEIT_MIN = 30;
 const SAT_CLOSE = '23:00';
-const IMG_COLORS = ['#C0491B','#166E6B','#4F6B12','#8E2F55','#8A6414'];
+const IMG_COLORS = ['#C0491B','#15646F','#5B7A14','#8E2F55','#8A6414'];
 
 let state = null, cursor = sundayOf(new Date()), shared = false;
 
@@ -571,9 +586,16 @@ function render(){
       t.className='time'; t.textContent=label; t.title='Tap to change these hours';
       t.onclick=()=>editTime(t,di,si);
       top.appendChild(t);
+      const ed=document.createElement('button');
+      ed.className='editlbl';
+      ed.innerHTML='\u270e ' + EDIT_TH + ' <span>edit</span>';
+      ed.title='Change these hours';
+      ed.onclick=()=>editTime(t,di,si);
+      top.appendChild(ed);
       if(!mask){
         const o=document.createElement('span');
-        o.className='openlbl'; o.textContent='open';
+        o.className='openlbl'; o.textContent=NO_ONE_TH;
+        o.title='No one on this shift yet';
         top.appendChild(o);
       }
       const kill=document.createElement('button');
@@ -600,7 +622,7 @@ function render(){
 
     const add=document.createElement('button');
     add.className='addshift';
-    add.textContent='+ add a shift';
+    add.textContent='+ ' + ADD_SHIFT_TH + '  \u00b7  add shift';
     add.title = di<5 ? 'Adds a shift to Sunday'+DASH+'Thursday' : 'Adds a shift to '+DOW_FULL[di];
     add.onclick=()=>addShift(di);
     col.appendChild(add);
@@ -625,7 +647,9 @@ function render(){
   const tag=document.createElement('span');
   tag.className='open-tag';
   tag.dataset.zero = open===0 ? '1':'0';
-  tag.textContent = open===0 ? 'All covered' : open+' open';
+  tag.textContent = open===0
+    ? ALL_COVERED_TH+' \u00b7 all covered'
+    : open+' '+KA_TH+NO_ONE_TH+' \u00b7 '+open+' open';
   legendEl.appendChild(tag);
 
 }
@@ -732,7 +756,7 @@ function asText(link){
     shiftsFor(di).forEach((label,si)=>{
       const mask=maskAt(di,si);
       const who=state.workers.filter((n,wi)=>mask&(1<<wi));
-      L.push('  '+label+'   '+(who.length?who.join(', '):'-- open --'));
+      L.push('  '+label+'   '+(who.length?who.join(', '):'-- '+NO_ONE_TH+' / open --'));
     });
   }
   L.push('');
@@ -759,32 +783,32 @@ function drawImage(){
   const fb=(w,s)=>w+' '+s+'px "Montserrat","IBM Plex Sans",sans-serif';
   const round=(a,b,c,d,r)=>{ x.beginPath(); if(x.roundRect) x.roundRect(a,b,c,d,r); else x.rect(a,b,c,d); };
 
-  x.fillStyle='#F2EDE1'; x.fillRect(0,0,W,H);
+  x.fillStyle='#EDF1EA'; x.fillRect(0,0,W,H);
   x.textBaseline='alphabetic';
 
   const end=addDays(cursor,6);
-  x.fillStyle='#2D2D2D'; x.font=fb(700,38);
+  x.fillStyle='#0E4A32'; x.font=fb(700,38);
   x.fillText('KITCHEN ROTA', PAD, 62);
-  x.fillStyle='#1A1407'; x.font=fm(600,27);
+  x.fillStyle='#0F1C16'; x.font=fm(600,27);
   x.fillText(DOW[0]+' '+dm(cursor)+'   '+DASH+'   '+DOW[6]+' '+dm(end)+' '+end.getFullYear(), PAD, 100);
-  x.fillStyle='#8A7C63'; x.font=f(600,20);
+  x.fillStyle='#6F8277'; x.font=f(600,20);
   x.fillText((mode()==='s'?'Summer':'Winter')+' clock', PAD, 126);
 
   let y=HEAD;
   for(let di=0; di<7; di++){
     const h=dayH(di);
     round(PAD, y, W-PAD*2, h, 14);
-    x.fillStyle='#FFFDF8'; x.fill();
-    x.strokeStyle='#E0D6C4'; x.lineWidth=1; x.stroke();
+    x.fillStyle='#FFFFFF'; x.fill();
+    x.strokeStyle='#D2DECB'; x.lineWidth=1; x.stroke();
 
     x.save(); round(PAD, y, W-PAD*2, DH, 14); x.clip();
-    x.fillStyle = di>=5 ? '#EBE3D1' : '#F7F2E6';
+    x.fillStyle = di>=5 ? '#E2EADD' : '#F4F7F1';
     x.fillRect(PAD, y, W-PAD*2, DH);
     x.restore();
-    x.fillStyle='#1A1407'; x.font=ft(700,27);
+    x.fillStyle='#0F1C16'; x.font=ft(700,27);
     x.fillText(DOW_TH[di], PAD+18, y+38);
     const wTh=x.measureText(DOW_TH[di]).width;
-    x.fillStyle='#8A7C63'; x.font=f(600,21);
+    x.fillStyle='#6F8277'; x.font=f(600,21);
     x.fillText(DOW_FULL[di], PAD+18+wTh+13, y+38);
     x.font=fm(500,22);
     const dt=dm(addDays(cursor,di));
@@ -794,14 +818,14 @@ function drawImage(){
     shifts[di].forEach((label,si)=>{
       const mask=maskAt(di,si);
       const who=state.workers.map((n,wi)=>({n,wi})).filter(o=>mask&(1<<o.wi));
-      if(si>0){ x.strokeStyle='#F0E9DA'; x.beginPath(); x.moveTo(PAD+18,ry); x.lineTo(W-PAD-18,ry); x.stroke(); }
+      if(si>0){ x.strokeStyle='#EDF1EA'; x.beginPath(); x.moveTo(PAD+18,ry); x.lineTo(W-PAD-18,ry); x.stroke(); }
       x.font=fm(600,23);
-      x.fillStyle = who.length ? '#5A4F3C' : '#B4551F';
+      x.fillStyle = who.length ? '#41544A' : '#B4551F';
       x.fillText(label, PAD+18, ry+33);
       let cx=PAD+18+205;
       if(!who.length){
-        x.fillStyle='#B4551F'; x.font=f(700,22);
-        x.fillText('open', cx, ry+33);
+        x.fillStyle='#B4551F'; x.font=ft(700,22);
+        x.fillText(NO_ONE_TH, cx, ry+33);
       } else {
         who.forEach((o,i)=>{
           x.fillStyle=IMG_COLORS[o.wi % IMG_COLORS.length];
