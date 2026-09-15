@@ -29,13 +29,13 @@ img{ max-width:100% }
 :root{
   --bar:#17322D; --bar-ink:#F2EFEA;
   --gold:#FCC179; --gold-ink:#17322D;
-  --bg:#F0EDEA; --panel:#FFFFFF; --panel-2:#F7F5F2; --panel-3:#E7E3DE;
-  --line:#DCD7D1; --line-2:#BBB4AC;
-  --ink:#111010; --ink-2:#4A4643; --ink-3:#7C7671;
-  --accent:#17322D; --warn:#B02E22; --warn-bg:#F8E3DE;
+  --bg:#EBF0EC; --panel:#FFFFFF; --panel-2:#F4F8F5; --panel-3:#E1E9E3;
+  --line:#D2DDD6; --line-2:#AEBDB5;
+  --ink:#101613; --ink-2:#41504A; --ink-3:#74837C;
+  --accent:#17322D; --warn:#CC3322; --warn-bg:#FCE9E6;
   --chip-ink:#FFFFFF;
   --wa:#1FA855; --ms:#0A7CFF;
-  --w0:#C0491B; --w1:#15646F; --w2:#5B7A14; --w3:#8E2F55; --w4:#8A6414;
+  --w0:#1565A8; --w1:#17786B; --w2:#3F7D1E; --w3:#7B2D8E; --w4:#C77800;
   --shadow:0 1px 2px rgba(15,28,22,.05), 0 10px 24px -18px rgba(15,28,22,.45);
   --brand:"Montserrat","IBM Plex Sans",system-ui,sans-serif;
   --sans:"IBM Plex Sans","Noto Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -46,26 +46,26 @@ img{ max-width:100% }
   :root:not([data-theme="light"]){
     --bar:#17322D; --bar-ink:#F2EFEA;
     --gold:#FCC179; --gold-ink:#17322D;
-    --bg:#0E1512; --panel:#15201B; --panel-2:#1A2721; --panel-3:#233430;
-    --line:#28372F; --line-2:#3D5248;
-    --ink:#EFEDE9; --ink-2:#AEB8B2; --ink-3:#7F8C86;
-    --accent:#FCC179; --warn:#F08C6E; --warn-bg:#33201B;
-    --chip-ink:#0E1512;
+    --bg:#0D1411; --panel:#141E19; --panel-2:#19261F; --panel-3:#22322B;
+    --line:#27352E; --line-2:#3C5047;
+    --ink:#EAF0EC; --ink-2:#AAB8B1; --ink-3:#7C8A83;
+    --accent:#FCC179; --warn:#F27462; --warn-bg:#331C19;
+    --chip-ink:#0D1411;
     --wa:#3DD07E; --ms:#4DA3FF;
-    --w0:#F08A5C; --w1:#5FB9C6; --w2:#B5CE63; --w3:#EE7FA8; --w4:#DCB65A;
+    --w0:#6FB4E8; --w1:#54BEAE; --w2:#9BD05E; --w3:#D68FE8; --w4:#EFB55A;
     --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 24px -18px rgba(0,0,0,.9);
   }
 }
 :root[data-theme="dark"]{
   --bar:#17322D; --bar-ink:#F2EFEA;
   --gold:#FCC179; --gold-ink:#17322D;
-  --bg:#0E1512; --panel:#15201B; --panel-2:#1A2721; --panel-3:#233430;
-  --line:#28372F; --line-2:#3D5248;
-  --ink:#EFEDE9; --ink-2:#AEB8B2; --ink-3:#7F8C86;
-  --accent:#FCC179; --warn:#F08C6E; --warn-bg:#33201B;
-  --chip-ink:#0E1512;
+  --bg:#0D1411; --panel:#141E19; --panel-2:#19261F; --panel-3:#22322B;
+  --line:#27352E; --line-2:#3C5047;
+  --ink:#EAF0EC; --ink-2:#AAB8B1; --ink-3:#7C8A83;
+  --accent:#FCC179; --warn:#F27462; --warn-bg:#331C19;
+  --chip-ink:#0D1411;
   --wa:#3DD07E; --ms:#4DA3FF;
-  --w0:#F08A5C; --w1:#5FB9C6; --w2:#B5CE63; --w3:#EE7FA8; --w4:#DCB65A;
+  --w0:#6FB4E8; --w1:#54BEAE; --w2:#9BD05E; --w3:#D68FE8; --w4:#EFB55A;
   --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 24px -18px rgba(0,0,0,.9);
 }
 
@@ -143,12 +143,16 @@ a{text-decoration:none}
 /* ---------- week tools ---------- */
 .weektools{display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap}
 .tool{
-  flex:1 1 auto; min-height:42px; border-radius:10px; cursor:pointer;
-  border:1px solid var(--line); background:var(--panel); color:var(--ink-2);
-  font-family:var(--thai); font-size:13.5px; font-weight:600; padding:6px 12px;
-  display:inline-flex; align-items:center; justify-content:center; gap:7px;
+  flex:1 1 140px; min-height:54px; border-radius:12px; cursor:pointer;
+  border:1px solid var(--line); background:var(--panel); color:var(--ink);
+  font-family:var(--thai); font-size:14px; font-weight:600; padding:8px 12px;
+  display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:0;
+  line-height:1.5;
 }
-.tool em{font-family:var(--sans); font-style:normal; font-size:11.5px; letter-spacing:.03em; text-transform:uppercase; color:var(--ink-3)}
+.tool em{
+  font-family:var(--sans); font-style:normal; font-size:10.5px; font-weight:600;
+  letter-spacing:.06em; text-transform:uppercase; color:var(--ink-3); line-height:1.4;
+}
 .tool:active{transform:translateY(1px)}
 .tool[data-empty="1"]{background:var(--bar); border-color:var(--bar); color:var(--bar-ink)}
 .tool[data-empty="1"] em{color:var(--gold); opacity:1}
@@ -243,10 +247,9 @@ a{text-decoration:none}
 }
 .editlbl{
   margin-right:auto; display:inline-flex; align-items:center; gap:3px;
-  font-family:var(--thai); font-size:12.5px; font-weight:600; color:var(--ink-3);
-  background:var(--panel-3); border-radius:6px; padding:2px 7px; cursor:text;
+  font-family:var(--thai); font-size:13px; font-weight:600; color:var(--ink-2);
+  background:var(--panel-3); border-radius:7px; padding:3px 9px; cursor:text;
 }
-.editlbl span{font-family:var(--sans); font-size:11px; letter-spacing:.03em; text-transform:uppercase; opacity:.8}
 .openlbl{
   font-family:var(--thai); font-size:12.5px; font-weight:700; color:var(--warn);
   background:var(--panel); border:1px solid currentColor; border-radius:6px; padding:1px 8px;
@@ -316,17 +319,18 @@ a{text-decoration:none}
   display:flex; gap:7px;
 }
 .dockbtn{
-  flex:1 1 0; min-width:0; min-height:52px; border-radius:12px; cursor:pointer;
-  border:1px solid var(--line); background:var(--panel-2); color:var(--ink);
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;
-  padding:6px 3px; font-size:11.5px; font-weight:700; letter-spacing:-.01em;
+  flex:1 1 0; min-width:0; min-height:58px; border-radius:12px; cursor:pointer;
+  border:1px solid var(--line); background:var(--panel); color:var(--ink-2);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
+  padding:7px 3px; font-size:12px; font-weight:600; letter-spacing:0;
 }
-.dockbtn svg{width:21px; height:21px; display:block}
+.dockbtn svg{width:22px; height:22px; display:block}
 .dockbtn span{white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%}
 .dockbtn:active{transform:translateY(1px)}
 .dockbtn.wa{background:var(--wa); border-color:var(--wa); color:#fff}
+
 .dockbtn.ms{background:var(--ms); border-color:var(--ms); color:#fff}
-.dockbtn.img{background:var(--gold); border-color:var(--gold); color:var(--gold-ink)}
+.dockbtn.img{background:var(--accent); border-color:var(--accent); color:#F2EFEA}
 
 .btn{
   flex:1 1 0; min-height:48px; border-radius:11px; cursor:pointer;
@@ -516,7 +520,7 @@ const DEF = {
 const HAIFA = { lat:32.7940, lng:34.9896 };
 const TZEIT_MIN = 30;
 const SAT_CLOSE = '23:00';
-const IMG_COLORS = ['#C0491B','#15646F','#5B7A14','#8E2F55','#8A6414'];
+const IMG_COLORS = ['#1565A8','#17786B','#3F7D1E','#7B2D8E','#C77800'];
 
 let state = null, cursor = sundayOf(new Date()), shared = false;
 
@@ -692,7 +696,8 @@ function render(){
       top.appendChild(t);
       const ed=document.createElement('button');
       ed.className='editlbl';
-      ed.innerHTML='\u270e ' + EDIT_TH + ' <span>edit</span>';
+      ed.textContent='\u270e ' + EDIT_TH;
+      ed.setAttribute('aria-label','Edit these hours');
       ed.title='Change these hours';
       ed.onclick=()=>editTime(t,di,si);
       top.appendChild(ed);
@@ -973,15 +978,15 @@ function drawImage(){
   const fb=(w,s)=>w+' '+s+'px "Montserrat","IBM Plex Sans",sans-serif';
   const round=(a,b,c,d,r)=>{ x.beginPath(); if(x.roundRect) x.roundRect(a,b,c,d,r); else x.rect(a,b,c,d); };
 
-  x.fillStyle='#F0EDEA'; x.fillRect(0,0,W,H);
+  x.fillStyle='#EBF0EC'; x.fillRect(0,0,W,H);
   x.textBaseline='alphabetic';
 
   const end=addDays(cursor,6);
   x.fillStyle='#17322D'; x.font=fb(700,38);
   x.fillText('KITCHEN ROTA', PAD, 62);
-  x.fillStyle='#111010'; x.font=fm(600,27);
+  x.fillStyle='#101613'; x.font=fm(600,27);
   x.fillText(DOW[0]+' '+dm(cursor)+'   '+DASH+'   '+DOW[6]+' '+dm(end)+' '+end.getFullYear(), PAD, 100);
-  x.fillStyle='#7C7671'; x.font=f(600,20);
+  x.fillStyle='#74837C'; x.font=f(600,20);
   x.fillText((mode()==='s'?'Summer':'Winter')+' clock', PAD, 126);
   x.fillStyle='#FCC179'; x.fillRect(PAD, 136, W-PAD*2, 3);
 
@@ -990,16 +995,16 @@ function drawImage(){
     const h=dayH(di);
     round(PAD, y, W-PAD*2, h, 14);
     x.fillStyle='#FFFFFF'; x.fill();
-    x.strokeStyle='#DCD7D1'; x.lineWidth=1; x.stroke();
+    x.strokeStyle='#D2DDD6'; x.lineWidth=1; x.stroke();
 
     x.save(); round(PAD, y, W-PAD*2, DH, 14); x.clip();
-    x.fillStyle = di>=5 ? '#E7E3DE' : '#F7F5F2';
+    x.fillStyle = di>=5 ? '#E1E9E3' : '#F4F8F5';
     x.fillRect(PAD, y, W-PAD*2, DH);
     x.restore();
-    x.fillStyle='#111010'; x.font=ft(700,27);
+    x.fillStyle='#101613'; x.font=ft(700,27);
     x.fillText(DOW_TH[di], PAD+18, y+38);
     const wTh=x.measureText(DOW_TH[di]).width;
-    x.fillStyle='#7C7671'; x.font=f(600,21);
+    x.fillStyle='#74837C'; x.font=f(600,21);
     x.fillText(DOW_FULL[di], PAD+18+wTh+13, y+38);
     x.font=fm(500,22);
     const dt=dm(addDays(cursor,di));
@@ -1009,13 +1014,13 @@ function drawImage(){
     shifts[di].forEach((label,si)=>{
       const mask=maskAt(di,si);
       const who=state.workers.map((n,wi)=>({n,wi})).filter(o=>mask&(1<<o.wi));
-      if(si>0){ x.strokeStyle='#F0EDEA'; x.beginPath(); x.moveTo(PAD+18,ry); x.lineTo(W-PAD-18,ry); x.stroke(); }
+      if(si>0){ x.strokeStyle='#EBF0EC'; x.beginPath(); x.moveTo(PAD+18,ry); x.lineTo(W-PAD-18,ry); x.stroke(); }
       x.font=fm(600,23);
-      x.fillStyle = who.length ? '#4A4643' : '#B02E22';
+      x.fillStyle = who.length ? '#41504A' : '#CC3322';
       x.fillText(label, PAD+18, ry+33);
       let cx=PAD+18+205;
       if(!who.length){
-        x.fillStyle='#B02E22'; x.font=ft(700,22);
+        x.fillStyle='#CC3322'; x.font=ft(700,22);
         x.fillText(NO_ONE_TH, cx, ry+33);
       } else {
         who.forEach((o,i)=>{
