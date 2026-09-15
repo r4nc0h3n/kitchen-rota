@@ -3,14 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#EDF1EA" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B1410" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#17322D">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Rota">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E4A32'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23E8D09B' stroke-width='3'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADaElEQVR42u3dwW0bQRBE0Y7AwSgMp8ikHIazkOG7DwZBUTO/3wJ151Y9DElpBc0cev34+fEp52ZcwAIPsAAOsoANsoANsmRhG0cysA0iCdRGkAxsxUsGtcIlg1rRkkGtYMmgVqxkUCtUMqgVKSnUSpQMaAVKBrXiJIVaaZIBrTBJoVaWZEArSlKolSQZ0AqSFGrlSAa0YiSFWikCtAjQIl8MWiGSQq0MAVoE6HZ+/3o8Hf0BfSVc0IFehxhuoLOI4QY6ixju/wCtiHshg/0P1CA/cgEaZLCBBhlsoGGGGmiQwQb6mzBXXyPQCzB77UBfDdk9AZ0Y3v0BnRjbvQKdGNh9A50YVQcPoAtD+tjV6WOM56c8pV5m62h+Q9rsaCVoz68AbSSogTaO3oA2iv6AhlmHl4GGWZcZ0DDrdD1oaHf2OkqHutQv0EADrWyogX5D0XDqepwaUup7nBhS6nycFlLqfZwUUuoeaAFaoVCfugHQAvQpZcJnh6NBO51tsRY0dPYAWoD2Fgf0TZsALUB7e4MaaKCBBhpouwAtQPvyIY1txikgpX2AFqCBBhpooIEGGmj7AC1AK0yABhpooIEGGmig7QO0AK0wARpooIH2tJ2n7TwPDbRdgBagFSdAAw000L4Y+kIINNA2OR+0jx0+bgAt9qiAhtoWx4N2StthNWiobQC0AK1QmP2fQqCBBvq5UqHW+9GgndI6Xw8aan0fDdoprev1oKHW8ygb5lK/QAMNtNJhBvrNxUO9s9MxAMylLscQMJc6XAEa6j39jVFgLvU2xoG51NcYCeZSTytBb0G9saPZPFgV9uZexngPmEN9jBEbQ+ogBPqVg9426tb7zoN+9binD7zpXteC/oqhTxu7fn9Av2n07x6+eE9AH4LgHRhufu1AXwzjFVBueI1AL0Z9cupbrwAN9p7nV1aB3op6077rQG+CvXHXtaDLsDfvOX8vf570AXIFM9D3w7Yb0Nfjtg/Q1+O2A9DX49Y30P4gFWhlCNAiZ4KGWlKYgRagRYAWeRNoqCWFGWjJgYZaUpiBlhxoqCWFGWjJgYZaUpiBlhxoqCWFGWrJYQZacqChlhRmqCWHGWrJYYZacpihlhxmqCWHGWrJYQZbcpChliRmsCUHGWxJQgZbkpDBliRkwAF2AQ/sk9cf3LIX6oNPD94AAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2317322D'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23FCC179' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADZ0lEQVR42u3dwW0bQRBE0c7CUeji7Bie8zIgw3cfDIKiZn6/BerOrXoYktIKmjn0+vHz41POzbiABR5gARxkARtkARtkycI2jmRgG0QSqI0gGdiKlwxqhUsGtaIlg1rBkkGtWMmgVqhkUCtSUqiVKBnQCpQMasVJCrXSJANaYZJCrSzJgFaUpFArSTKgFSQp1MqRDGjFSAq1UgRoEaBFvhi0QiSFWhkCtAjQ7fz+9Xg6+gP6SrigA70OMdxAZxHDDXQWMdz/AVoR90IG+x+oQX7kAjTIYAMNMthAwww10CCDDfQ3Ya6+RqAXYPbagb4asnsCOjG8+wM6MbZ7BToxsPsGOjGqDh5AF4b0savTxxjPT3lKvczW0fyGtNnRStCeXwHaSFADbRy9AW0U/QENsw4vAw2zLjOgYdbpetDQ7ux1lA51qV+ggQZa2VAD/Yai4dT1ODWk1Pc4MaTU+TgtpNT7OCmk1D3QArRCoT51A6AF6FPKhM8OR4N2OttiLWjo7AG0AO0tDuibNgFagPb2BjXQQAMNNNB2AVqA9uVDGtuMU0BK+wAtQAMNNNBAAw000PYBWoBWmAANNNBAAw000EDbB2gBWmECNNBAA+1pO0/beR4aaLsALUArToAGGmigfTH0hRBooG1yPmgfO3zcAFrsUQENtS2OB+2UtsNq0FDbAGgBWqEw+z+FQAMN9HOlQq33o0E7pXW+HjTU+j4atFNa1+tBQ63nUTbMpX6BBhpopcMM9JuLh3pnp2MAmEtdjiFgLnW4AjTUe/obo8Bc6m2MA3OprzESzKWeVoLegnpjR7N5sCrszb2M8R4wh/oYIzaG1EEI9CsHvW3UrfedB/3qcU8feNO9rgX9FUOfNnb9/oB+0+jfPXzxnoA+BME7MNz82oG+GMYroNzwGoFejPrk1LdeARrsPc+vrAK9FfWmfdeB3gR7465rQZdhb95z/l7+POkD5ApmoO+HbTegr8dtH6Cvx20HoK/HrW+g/UEq0MoQoEXOBA21pDADLUCLAC3yJtBQSwoz0JIDDbWkMAMtOdBQSwoz0JIDDbWkMAMtOdBQSwoz1JLDDLTkQEMtKcxQSw4z1JLDDLXkMEMtOcxQSw4z1JLDDLbkIEMtScxgSw4y2JKEDLYkIYMtSciAA+wCHtgnrz+OdCNwMF/XCgAAAABJRU5ErkJggg==">
 <style>
 :root{
   color-scheme: light dark;
@@ -28,10 +27,12 @@ img{ max-width:100% }
 
 <style>
 :root{
-  --bg:#EDF1EA; --panel:#FFFFFF; --panel-2:#F4F7F1; --panel-3:#E2EADD;
-  --line:#D2DECB; --line-2:#AFC0A6;
-  --ink:#0F1C16; --ink-2:#41544A; --ink-3:#6F8277;
-  --accent:#0E4A32; --gold:#B8912F; --warn:#B4551F; --warn-bg:#F8E7D8;
+  --bar:#17322D; --bar-ink:#F2EFEA;
+  --gold:#FCC179; --gold-ink:#17322D;
+  --bg:#F0EDEA; --panel:#FFFFFF; --panel-2:#F7F5F2; --panel-3:#E7E3DE;
+  --line:#DCD7D1; --line-2:#BBB4AC;
+  --ink:#111010; --ink-2:#4A4643; --ink-3:#7C7671;
+  --accent:#17322D; --warn:#B02E22; --warn-bg:#F8E3DE;
   --chip-ink:#FFFFFF;
   --wa:#1FA855; --ms:#0A7CFF;
   --w0:#C0491B; --w1:#15646F; --w2:#5B7A14; --w3:#8E2F55; --w4:#8A6414;
@@ -43,22 +44,26 @@ img{ max-width:100% }
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#0B1410; --panel:#122019; --panel-2:#18281F; --panel-3:#1F3428;
-    --line:#26382D; --line-2:#3A5042;
-    --ink:#E9F1EA; --ink-2:#A8BCAF; --ink-3:#7B9184;
-    --accent:#E8D09B; --gold:#E8D09B; --warn:#EE9463; --warn-bg:#2E2117;
-    --chip-ink:#0B1410;
+    --bar:#17322D; --bar-ink:#F2EFEA;
+    --gold:#FCC179; --gold-ink:#17322D;
+    --bg:#0E1512; --panel:#15201B; --panel-2:#1A2721; --panel-3:#233430;
+    --line:#28372F; --line-2:#3D5248;
+    --ink:#EFEDE9; --ink-2:#AEB8B2; --ink-3:#7F8C86;
+    --accent:#FCC179; --warn:#F08C6E; --warn-bg:#33201B;
+    --chip-ink:#0E1512;
     --wa:#3DD07E; --ms:#4DA3FF;
     --w0:#F08A5C; --w1:#5FB9C6; --w2:#B5CE63; --w3:#EE7FA8; --w4:#DCB65A;
     --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 24px -18px rgba(0,0,0,.9);
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0B1410; --panel:#122019; --panel-2:#18281F; --panel-3:#1F3428;
-  --line:#26382D; --line-2:#3A5042;
-  --ink:#E9F1EA; --ink-2:#A8BCAF; --ink-3:#7B9184;
-  --accent:#E8D09B; --gold:#E8D09B; --warn:#EE9463; --warn-bg:#2E2117;
-  --chip-ink:#0B1410;
+  --bar:#17322D; --bar-ink:#F2EFEA;
+  --gold:#FCC179; --gold-ink:#17322D;
+  --bg:#0E1512; --panel:#15201B; --panel-2:#1A2721; --panel-3:#233430;
+  --line:#28372F; --line-2:#3D5248;
+  --ink:#EFEDE9; --ink-2:#AEB8B2; --ink-3:#7F8C86;
+  --accent:#FCC179; --warn:#F08C6E; --warn-bg:#33201B;
+  --chip-ink:#0E1512;
   --wa:#3DD07E; --ms:#4DA3FF;
   --w0:#F08A5C; --w1:#5FB9C6; --w2:#B5CE63; --w3:#EE7FA8; --w4:#DCB65A;
   --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 24px -18px rgba(0,0,0,.9);
@@ -78,7 +83,22 @@ a{text-decoration:none}
 /* ---------- sticky header ---------- */
 .topbar{
   position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
-  background:var(--bg); border-bottom:2px solid var(--gold);
+  background:var(--bar); border-bottom:3px solid var(--gold);
+}
+.topbar :focus-visible{outline-color:var(--gold)}
+.topbar .title{color:var(--bar-ink)}
+.topbar .range{color:var(--bar-ink)}
+.topbar .arrow{
+  background:rgba(255,255,255,.07); border-color:rgba(252,193,121,.3); color:var(--bar-ink);
+}
+.topbar .arrow:active{background:rgba(255,255,255,.16)}
+.topbar .seg{background:rgba(0,0,0,.26)}
+.topbar .seg button{color:rgba(242,239,234,.62)}
+.topbar .seg button[aria-pressed="true"]{background:var(--gold); color:var(--gold-ink); box-shadow:none}
+.topbar .txtbtn{color:var(--gold)}
+.topbar .txtbtn:active{color:var(--bar-ink)}
+.topbar .head-actions .btn{
+  background:rgba(255,255,255,.07); border-color:rgba(252,193,121,.3); color:var(--bar-ink);
 }
 .topbar .inner{
   max-width:1360px; margin:0 auto; padding:10px 16px 11px;
@@ -91,7 +111,7 @@ a{text-decoration:none}
 }
 .title .mark{
   width:22px; height:22px; border-radius:6px; background:var(--gold);
-  color:var(--accent); display:grid; place-items:center; font-size:12px; flex:none;
+  color:var(--gold-ink); display:grid; place-items:center; font-size:12px; flex:none;
 }
 
 .nav{display:flex; align-items:center; gap:8px; width:100%; order:3}
@@ -130,8 +150,8 @@ a{text-decoration:none}
 }
 .tool em{font-family:var(--sans); font-style:normal; font-size:11.5px; letter-spacing:.03em; text-transform:uppercase; color:var(--ink-3)}
 .tool:active{transform:translateY(1px)}
-.tool[data-empty="1"]{background:var(--accent); border-color:var(--accent); color:var(--chip-ink)}
-.tool[data-empty="1"] em{color:var(--chip-ink); opacity:.75}
+.tool[data-empty="1"]{background:var(--bar); border-color:var(--bar); color:var(--bar-ink)}
+.tool[data-empty="1"] em{color:var(--gold); opacity:1}
 .tool[data-armed="1"]{background:var(--warn-bg); border-color:var(--warn); color:var(--warn)}
 .tool[data-armed="1"] em{color:var(--warn)}
 
@@ -186,8 +206,8 @@ a{text-decoration:none}
   margin-left:auto; font-family:var(--mono); font-size:14px; font-weight:500;
   color:var(--ink-3); font-variant-numeric:tabular-nums;
 }
-.day[data-today="1"] .day-head{background:var(--accent); border-bottom-color:var(--accent)}
-.day[data-today="1"] .dow,.day[data-today="1"] .dt,.day[data-today="1"] .th{color:var(--chip-ink)}
+.day[data-today="1"] .day-head{background:var(--bar); border-bottom-color:var(--bar)}
+.day[data-today="1"] .dow,.day[data-today="1"] .th{color:var(--bar-ink)}
 .day[data-today="1"] .th{opacity:.8}
 .day[data-today="1"] .dt{color:var(--gold); opacity:1}
 
@@ -301,7 +321,7 @@ a{text-decoration:none}
 .dockbtn:active{transform:translateY(1px)}
 .dockbtn.wa{background:var(--wa); border-color:var(--wa); color:#fff}
 .dockbtn.ms{background:var(--ms); border-color:var(--ms); color:#fff}
-.dockbtn.img{background:var(--accent); border-color:var(--accent); color:var(--chip-ink)}
+.dockbtn.img{background:var(--gold); border-color:var(--gold); color:var(--gold-ink)}
 
 .btn{
   flex:1 1 0; min-height:48px; border-radius:11px; cursor:pointer;
@@ -310,7 +330,7 @@ a{text-decoration:none}
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
 }
 .btn:active{transform:translateY(1px)}
-.btn.primary{background:var(--accent); border-color:var(--accent); color:var(--chip-ink)}
+.btn.primary{background:var(--bar); border-color:var(--bar); color:var(--bar-ink)}
 .btn.wa{background:var(--wa); border-color:var(--wa); color:#fff}
 .btn.ms{background:var(--ms); border-color:var(--ms); color:#fff}
 .btn svg{width:19px; height:19px; flex:none}
@@ -916,32 +936,33 @@ function drawImage(){
   const fb=(w,s)=>w+' '+s+'px "Montserrat","IBM Plex Sans",sans-serif';
   const round=(a,b,c,d,r)=>{ x.beginPath(); if(x.roundRect) x.roundRect(a,b,c,d,r); else x.rect(a,b,c,d); };
 
-  x.fillStyle='#EDF1EA'; x.fillRect(0,0,W,H);
+  x.fillStyle='#F0EDEA'; x.fillRect(0,0,W,H);
   x.textBaseline='alphabetic';
 
   const end=addDays(cursor,6);
-  x.fillStyle='#0E4A32'; x.font=fb(700,38);
+  x.fillStyle='#17322D'; x.font=fb(700,38);
   x.fillText('KITCHEN ROTA', PAD, 62);
-  x.fillStyle='#0F1C16'; x.font=fm(600,27);
+  x.fillStyle='#111010'; x.font=fm(600,27);
   x.fillText(DOW[0]+' '+dm(cursor)+'   '+DASH+'   '+DOW[6]+' '+dm(end)+' '+end.getFullYear(), PAD, 100);
-  x.fillStyle='#6F8277'; x.font=f(600,20);
+  x.fillStyle='#7C7671'; x.font=f(600,20);
   x.fillText((mode()==='s'?'Summer':'Winter')+' clock', PAD, 126);
+  x.fillStyle='#FCC179'; x.fillRect(PAD, 136, W-PAD*2, 3);
 
   let y=HEAD;
   for(let di=0; di<7; di++){
     const h=dayH(di);
     round(PAD, y, W-PAD*2, h, 14);
     x.fillStyle='#FFFFFF'; x.fill();
-    x.strokeStyle='#D2DECB'; x.lineWidth=1; x.stroke();
+    x.strokeStyle='#DCD7D1'; x.lineWidth=1; x.stroke();
 
     x.save(); round(PAD, y, W-PAD*2, DH, 14); x.clip();
-    x.fillStyle = di>=5 ? '#E2EADD' : '#F4F7F1';
+    x.fillStyle = di>=5 ? '#E7E3DE' : '#F7F5F2';
     x.fillRect(PAD, y, W-PAD*2, DH);
     x.restore();
-    x.fillStyle='#0F1C16'; x.font=ft(700,27);
+    x.fillStyle='#111010'; x.font=ft(700,27);
     x.fillText(DOW_TH[di], PAD+18, y+38);
     const wTh=x.measureText(DOW_TH[di]).width;
-    x.fillStyle='#6F8277'; x.font=f(600,21);
+    x.fillStyle='#7C7671'; x.font=f(600,21);
     x.fillText(DOW_FULL[di], PAD+18+wTh+13, y+38);
     x.font=fm(500,22);
     const dt=dm(addDays(cursor,di));
@@ -951,13 +972,13 @@ function drawImage(){
     shifts[di].forEach((label,si)=>{
       const mask=maskAt(di,si);
       const who=state.workers.map((n,wi)=>({n,wi})).filter(o=>mask&(1<<o.wi));
-      if(si>0){ x.strokeStyle='#EDF1EA'; x.beginPath(); x.moveTo(PAD+18,ry); x.lineTo(W-PAD-18,ry); x.stroke(); }
+      if(si>0){ x.strokeStyle='#F0EDEA'; x.beginPath(); x.moveTo(PAD+18,ry); x.lineTo(W-PAD-18,ry); x.stroke(); }
       x.font=fm(600,23);
-      x.fillStyle = who.length ? '#41544A' : '#B4551F';
+      x.fillStyle = who.length ? '#4A4643' : '#B02E22';
       x.fillText(label, PAD+18, ry+33);
       let cx=PAD+18+205;
       if(!who.length){
-        x.fillStyle='#B4551F'; x.font=ft(700,22);
+        x.fillStyle='#B02E22'; x.font=ft(700,22);
         x.fillText(NO_ONE_TH, cx, ry+33);
       } else {
         who.forEach((o,i)=>{
