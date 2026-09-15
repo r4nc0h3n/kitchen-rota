@@ -256,6 +256,11 @@ a{text-decoration:none}
   font-size:20px; line-height:1; padding:2px 6px; border-radius:6px;
 }
 .kill:active{background:var(--panel-3)}
+.kill[data-armed="1"]{
+  width:auto; font-family:var(--thai); font-size:12.5px; font-weight:700; line-height:1.5;
+  color:var(--warn); background:var(--warn-bg);
+  box-shadow:0 0 0 1px var(--warn) inset; padding:2px 9px;
+}
 
 .chips{display:flex; gap:6px; flex-wrap:wrap}
 .chip{
@@ -698,7 +703,11 @@ function render(){
         top.appendChild(o);
       }
       const kill=document.createElement('button');
-      kill.className='kill'; kill.innerHTML='&times;'; kill.setAttribute('aria-label','Remove this shift');
+      kill.className='kill';
+      const armedHere = armedKill === di+':'+si;
+      kill.innerHTML = armedHere ? DEL_Q_TH : '&times;';
+      if(armedHere) kill.dataset.armed='1';
+      kill.setAttribute('aria-label', armedHere ? 'Tap again to remove this shift' : 'Remove this shift');
       kill.onclick=()=>removeShift(di,si);
       top.appendChild(kill);
       row.appendChild(top);
@@ -762,6 +771,8 @@ function render(){
 }
 
 /* ---------- week tools ---------- */
+const DEL_Q_TH='ลบ?';
+const RESET_TH='คืนค่าเวลาเดิม';
 const CLASH_TH='เวลาซ้อนกัน';
 let armed=null, armedT;
 function renderTools(filled){
@@ -776,6 +787,17 @@ function renderTools(filled){
   if(!filled && prevHas) copy.dataset.empty='1';   // the obvious move on a blank week
   copy.onclick=copyLastWeek;
   tools.appendChild(copy);
+
+  const stock = JSON.stringify(state.wd)===JSON.stringify(DEF.wd)
+             && JSON.stringify(state.fri)===JSON.stringify(DEF.fri);
+  if(!stock){
+    const rst=document.createElement('button');
+    rst.className='tool';
+    rst.innerHTML='\u21ba '+RESET_TH+' <em>reset hours</em>';
+    rst.title='Put the Sunday\u2013Friday shift times back to the originals';
+    rst.onclick=resetHours;
+    tools.appendChild(rst);
+  }
 
   if(filled){
     const clr=document.createElement('button');
@@ -795,6 +817,11 @@ function copyLastWeek(){
   // Saturday hours are dated, so only the people carry over - the times recompute.
   week().a = prev.a.map(r=>r.slice());
   save(); render(); toast('คัดลอกแล้ว \u00b7 copied');
+}
+function resetHours(){
+  state.wd = DEF.wd.slice();
+  state.fri = { s:DEF.fri.s.slice(), w:DEF.fri.w.slice() };
+  save(); render(); toast('คืนค่าแล้ว \u00b7 hours restored');
 }
 function clearWeek(){
   if(armed!=='clear'){
@@ -828,7 +855,17 @@ function addShift(di){
   const btns=weekEl.children[di].querySelectorAll('.time');
   editTime(btns[btns.length-1], di, arr.length-1);
 }
+let armedKill=null, armedKillT;
 function removeShift(di,si){
+  // Weekday hours are shared by five days and there is no undo, so ask twice.
+  const key=di+':'+si;
+  if(armedKill!==key){
+    armedKill=key; render();
+    clearTimeout(armedKillT);
+    armedKillT=setTimeout(()=>{ armedKill=null; render(); }, 4000);
+    return;
+  }
+  clearTimeout(armedKillT); armedKill=null;
   const arr=shiftsFor(di).slice();
   arr.splice(si,1);
   setShifts(di,arr);
