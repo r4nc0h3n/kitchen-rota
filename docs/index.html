@@ -120,6 +120,21 @@ a{text-decoration:none}
 .txtbtn:active{color:var(--ink)}
 .head-actions{display:none; gap:8px}
 
+/* ---------- week tools ---------- */
+.weektools{display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap}
+.tool{
+  flex:1 1 auto; min-height:42px; border-radius:10px; cursor:pointer;
+  border:1px solid var(--line); background:var(--panel); color:var(--ink-2);
+  font-family:var(--thai); font-size:13.5px; font-weight:600; padding:6px 12px;
+  display:inline-flex; align-items:center; justify-content:center; gap:7px;
+}
+.tool em{font-family:var(--sans); font-style:normal; font-size:11.5px; letter-spacing:.03em; text-transform:uppercase; color:var(--ink-3)}
+.tool:active{transform:translateY(1px)}
+.tool[data-empty="1"]{background:var(--accent); border-color:var(--accent); color:var(--chip-ink)}
+.tool[data-empty="1"] em{color:var(--chip-ink); opacity:.75}
+.tool[data-armed="1"]{background:var(--warn-bg); border-color:var(--warn); color:var(--warn)}
+.tool[data-armed="1"] em{color:var(--warn)}
+
 /* ---------- roster strip ---------- */
 .wrap{max-width:1360px; margin:0 auto; padding:14px 16px 104px}
 
@@ -135,7 +150,11 @@ a{text-decoration:none}
 .cook .dot{width:10px; height:10px; border-radius:50%; background:var(--wc); flex:none}
 .cook .nm{background:none; border:0; padding:0; cursor:text; font-weight:600; font-size:15px}
 .cook input{background:none; border:0; width:6ch; font-weight:600; font-size:15px; padding:0}
-.cook .ct{font-family:var(--mono); font-size:13px; font-weight:600; color:var(--ink-3); font-variant-numeric:tabular-nums}
+.cook .ct{
+  font-family:var(--mono); font-size:12.5px; font-weight:600; color:var(--ink-3);
+  font-variant-numeric:tabular-nums; padding-left:7px; border-left:1px solid var(--line);
+}
+.cook[data-idle="1"]{opacity:.6}
 .open-tag{
   flex:none; background:var(--warn-bg); color:var(--warn); border-radius:999px;
   padding:6px 14px; font-size:14px; font-weight:700; white-space:nowrap;
@@ -179,8 +198,16 @@ a{text-decoration:none}
 .satnote b{font-family:var(--thai); font-size:14.5px; font-weight:600; color:var(--ink-2); line-height:1.65}
 .satnote em{font-style:normal; font-size:12px; line-height:1.4; color:var(--ink-3)}
 
+.clash{
+  display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;
+  padding:8px 14px; background:var(--warn-bg); color:var(--warn);
+  border-bottom:1px solid var(--line);
+  font-family:var(--thai); font-size:13px; font-weight:700; line-height:1.6;
+}
+.clash em{font-family:var(--sans); font-style:normal; font-weight:600; font-size:11.5px; opacity:.85}
+
 .shift{padding:11px 12px 12px; border-top:1px solid var(--line)}
-.day-head + .shift,.satnote + .shift{border-top:0}
+.day-head + .shift,.satnote + .shift,.clash + .shift{border-top:0}
 .shift[data-empty="1"]{background:var(--warn-bg)}
 .shift-top{display:flex; align-items:center; gap:8px; margin-bottom:8px; padding:0 2px}
 .time{
@@ -221,6 +248,8 @@ a{text-decoration:none}
   transition:background .1s, color .1s, border-color .1s;
 }
 .chip[aria-pressed="true"]{background:var(--wc); border-color:var(--wc); color:var(--chip-ink)}
+.chip:active{transform:scale(.96)}
+.chip[data-clash="1"]{box-shadow:0 0 0 2px var(--warn) inset}
 @media (hover:hover){ .chip:hover{border-color:var(--wc); color:var(--wc)} .chip[aria-pressed="true"]:hover{color:var(--chip-ink)} }
 
 .addshift{
@@ -379,7 +408,14 @@ a{text-decoration:none}
   </div>
 
   <div class="legend" id="legend"></div>
+  <div class="weektools" id="weektools"></div>
   <div class="week" id="week"></div>
+
+  <nav class="footnav">
+    <button class="arrow" id="prev2" aria-label="Previous week">&#8592;</button>
+    <span class="range" id="range2">&nbsp;</span>
+    <button class="arrow" id="next2" aria-label="Next week">&#8594;</button>
+  </nav>
 
   <section class="howto">
     <h2>&#3623;&#3636;&#3608;&#3637;&#3651;&#3594;&#3657;&#3591;&#3634;&#3609; <span>How to use</span></h2>
@@ -396,6 +432,10 @@ a{text-decoration:none}
         <em>Saturday opens after Shabbat goes out in Haifa, so its start time moves every week. Tap the time to override it.</em></li>
       <li>&#3621;&#3641;&#3585;&#3624;&#3619; &#8592; &#8594; &#3651;&#3594;&#3657;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3626;&#3633;&#3611;&#3604;&#3634;&#3627;&#3660; &#3585;&#3604; Today &#3648;&#3614;&#3639;&#3656;&#3629;&#3585;&#3621;&#3633;&#3610;&#3617;&#3634;&#3626;&#3633;&#3611;&#3604;&#3634;&#3627;&#3660;&#3609;&#3637;&#3657;
         <em>The arrows move between weeks; Today returns to this week.</em></li>
+      <li>กด «คัดลอกสัปดาห์ที่แล้ว» เพื่อดึงตารางของสัปดาห์ก่อนมาใช้ แล้วค่อยแก้เฉพาะที่เปลี่ยน
+        <em>Copy last week brings the previous week's people across, then you only change what differs.</em></li>
+      <li>ตัวเลขข้างชื่อพ่อครัวคือจำนวนกะและชั่วโมงในสัปดาห์นี้ ถ้าใครถูกใส่สองกะที่เวลาชนกัน จะมีแถบสีส้มเตือน
+        <em>The figures beside each cook are shifts and hours this week. If someone is put on two overlapping shifts, an orange strip warns you.</em></li>
       <li>กดปุ่ม WhatsApp หรือ Messenger เพื่อส่งรูปตารางเวรให้พนักงาน โทรศัพท์จะเปิดหน้าต่างแชร์ให้เลือกแชทได้เลย
         <em>WhatsApp and Messenger send a picture of the week. The phone opens its share sheet so you pick the chat.</em></li>
       <li>ปุ่ม Image ใช้ดูรูปก่อนส่ง กดค้างที่รูปเพื่อบันทึกลงเครื่อง · ปุ่ม Link คัดลอกลิงก์ของสัปดาห์นี้
@@ -528,6 +568,32 @@ function shiftsFor(di){
 }
 function maskAt(di,si){ return week().a[di][si]||0; }
 
+/* ---------- reading the hours out of a shift label ---------- */
+const CLOSE_MIN = 23*60;  // "close" has no clock time; count it to 23:00
+function parseRange(label){
+  const m = String(label).match(/(\d{1,2}):(\d{2})\s*[\u2013\u2014-]\s*(?:(\d{1,2}):(\d{2}))?/);
+  if(!m) return null;
+  const start = (+m[1])*60 + (+m[2]);
+  let end = m[3]!=null ? (+m[3])*60 + (+m[4]) : CLOSE_MIN;
+  if(end <= start) end += 24*60;         // a shift that runs past midnight
+  return {start, end};
+}
+// A cook on two shifts the same day whose times overlap is a rota mistake, not a double shift.
+function dayClashes(di){
+  const r = shiftsFor(di).map(parseRange);
+  const out = new Set();
+  for(let a=0; a<r.length; a++){
+    for(let b=a+1; b<r.length; b++){
+      if(!r[a] || !r[b]) continue;
+      if(r[a].start < r[b].end && r[b].start < r[a].end){
+        const both = maskAt(di,a) & maskAt(di,b);
+        for(let w=0; w<state.workers.length; w++) if(both & (1<<w)) out.add(w);
+      }
+    }
+  }
+  return out;
+}
+
 /* ---------- render ---------- */
 const $ = id => document.getElementById(id);
 const weekEl=$('week'), legendEl=$('legend'), banner=$('banner');
@@ -541,7 +607,8 @@ function render(){
 
   const todayISO = iso(new Date());
   const counts = state.workers.map(()=>0);
-  let open = 0;
+  const mins   = state.workers.map(()=>0);
+  let open = 0, filled = 0;
 
   weekEl.textContent = '';
   for(let di=0; di<7; di++){
@@ -573,9 +640,21 @@ function render(){
       }
     }
 
+    const clash = dayClashes(di);
+    if(clash.size){
+      const c=document.createElement('div');
+      c.className='clash';
+      c.innerHTML='\u26a0 <b></b><em></em>';
+      c.querySelector('b').textContent =
+        [...clash].map(w=>state.workers[w]).join(', ')+' \u2014 '+CLASH_TH;
+      c.querySelector('em').textContent = 'booked on two shifts at once';
+      col.appendChild(c);
+    }
+
     shiftsFor(di).forEach((label,si)=>{
       const mask = maskAt(di,si);
-      if(!mask) open++;
+      if(!mask) open++; else filled++;
+      const span = parseRange(label);
       const row=document.createElement('div');
       row.className='shift';
       if(!mask) row.dataset.empty='1';
@@ -608,11 +687,12 @@ function render(){
       chips.className='chips';
       state.workers.forEach((name,wi)=>{
         const on = !!(mask & (1<<wi));
-        if(on) counts[wi]++;
+        if(on){ counts[wi]++; if(span) mins[wi] += span.end - span.start; }
         const b=document.createElement('button');
         b.className='chip'; b.textContent=name;
         b.style.setProperty('--wc','var(--w'+wi+')');
         b.setAttribute('aria-pressed', on);
+        if(on && clash.has(wi)) b.dataset.clash='1';
         b.onclick=()=>toggle(di,si,wi);
         chips.appendChild(b);
       });
@@ -639,8 +719,12 @@ function render(){
     nb.className='nm'; nb.textContent=name; nb.title='Tap to rename';
     nb.onclick=()=>editName(nb,wi);
     c.appendChild(nb);
+    if(!counts[wi]) c.dataset.idle='1';
     const ct=document.createElement('span');
-    ct.className='ct'; ct.textContent=counts[wi];
+    ct.className='ct';
+    ct.textContent = counts[wi] + ' \u00b7 ' + Math.round(mins[wi]/60) + 'h';
+    ct.title = counts[wi]+' shifts, about '+Math.round(mins[wi]/60)
+             +' hours this week (closing shifts counted to 23:00)';
     c.appendChild(ct);
     legendEl.appendChild(c);
   });
@@ -652,6 +736,55 @@ function render(){
     : open+' '+KA_TH+NO_ONE_TH+' \u00b7 '+open+' open';
   legendEl.appendChild(tag);
 
+  renderTools(filled);
+  $('range2').textContent = $('range').textContent;
+
+}
+
+/* ---------- week tools ---------- */
+const CLASH_TH='เวลาซ้อนกัน';
+let armed=null, armedT;
+function renderTools(filled){
+  const tools=$('weektools');
+  tools.textContent='';
+  const prev = state.weeks[iso(addDays(cursor,-7))];
+  const prevHas = !!(prev && prev.a.some(r=>r.some(v=>v)));
+
+  const copy=document.createElement('button');
+  copy.className='tool';
+  copy.innerHTML='\u29c9 คัดลอกสัปดาห์ที่แล้ว <em>copy last week</em>';
+  if(!filled && prevHas) copy.dataset.empty='1';   // the obvious move on a blank week
+  copy.onclick=copyLastWeek;
+  tools.appendChild(copy);
+
+  if(filled){
+    const clr=document.createElement('button');
+    clr.className='tool';
+    const label = armed==='clear'
+      ? 'กดอีกครั้งเพื่อยืนยัน <em>tap again</em>'
+      : '\u2715 ล้างสัปดาห์นี้ <em>clear week</em>';
+    clr.innerHTML=label;
+    if(armed==='clear') clr.dataset.armed='1';
+    clr.onclick=clearWeek;
+    tools.appendChild(clr);
+  }
+}
+function copyLastWeek(){
+  const prev = state.weeks[iso(addDays(cursor,-7))];
+  if(!prev || !prev.a.some(r=>r.some(v=>v))){ toast('สัปดาห์ที่แล้วยังว่าง'); return; }
+  // Saturday hours are dated, so only the people carry over - the times recompute.
+  week().a = prev.a.map(r=>r.slice());
+  save(); render(); toast('คัดลอกแล้ว \u00b7 copied');
+}
+function clearWeek(){
+  if(armed!=='clear'){
+    armed='clear'; renderTools(1);
+    clearTimeout(armedT); armedT=setTimeout(()=>{ armed=null; render(); }, 4000);
+    return;
+  }
+  clearTimeout(armedT); armed=null;
+  week().a=[[],[],[],[],[],[],[]];
+  save(); render(); toast('ล้างแล้ว \u00b7 cleared');
 }
 
 /* ---------- edits ---------- */
@@ -887,6 +1020,8 @@ $('today').onclick=()=>{ cursor=sundayOf(new Date()); render(); window.scrollTo(
 $('cs').onclick=()=>{ week().m='s'; save(); render(); };
 $('cw').onclick=()=>{ week().m='w'; save(); render(); };
 $('bannerX').onclick=()=>{ banner.hidden=true; };
+$('prev2').onclick=()=>{ cursor=addDays(cursor,-7); render(); window.scrollTo({top:0}); };
+$('next2').onclick=()=>{ cursor=addDays(cursor,7); render(); window.scrollTo({top:0}); };
 $('btnText2').onclick=doText;
 $('btnLink').onclick=()=>copyOrShow(shareUrl(),'Share this week','Your browser blocked the clipboard. Select this link and copy it by hand.');
 $('btnPrint').onclick=()=>{ try{ window.print(); }catch(e){ toast('Press Ctrl/Cmd + P to print'); } };
