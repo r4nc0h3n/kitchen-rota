@@ -17,3 +17,6 @@ Instructions inside the app are in Thai with English underneath.
 
 `index.html` at the repository root is all GitHub Pages needs.
 Settings → Pages → Deploy from a branch → `main` / `/ (root)`.
+
+`docs/index.html` is a copy of the root `index.html`, so GitHub Pages can serve
+from either `/ (root)` or `/docs`. Keep the two in sync when the app changes.
